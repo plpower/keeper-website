@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keeper — Beauty recs from people you trust</title>
+  <meta name="description" content="Keeper is the social ratings app for beauty and wellness. See where your friends get their hair, nails, brows, and more." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Keeper</a>
+    <ul class="nav-links">
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">✨ Now in Friends &amp; Family Preview</div>
+      <h1>Beauty recs from people <span>you actually trust</span></h1>
+      <p class="hero-sub">
+        Keeper is the social ratings app for hair, nails, brows, facials, and more.
+        See where your friends go — and exactly what they thought.
+      </p>
+
+      <form class="waitlist-form" id="waitlist-form" onsubmit="submitWaitlist(event)">
+        <input
+          type="tel"
+          id="phone-input"
+          class="waitlist-input"
+          placeholder="Your phone number"
+          autocomplete="tel"
+          required
+        />
+        <button type="submit" class="waitlist-btn" id="waitlist-btn">Join the waitlist</button>
+      </form>
+      <div class="waitlist-hint">No spam. We'll text you when you're in.</div>
+      <div class="waitlist-success" id="waitlist-success">🎉 You're on the list! We'll be in touch.</div>
+      <div class="waitlist-error" id="waitlist-error">Something went wrong. Please try again.</div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="features-label">Why Keeper</div>
+    <h2 class="features-heading">Stop guessing. Start knowing.</h2>
+    <p class="features-sub">Yelp is full of strangers. Your friends' recs live in scattered texts. Keeper fixes both.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">💚</span>
+        <div class="feature-title">Friend ratings</div>
+        <p class="feature-desc">See exactly what your friends rated, what service they got, and what they said — all in one place.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔗</span>
+        <div class="feature-title">Network ratings</div>
+        <p class="feature-desc">Tap into friends-of-friends for wider discovery. More signal, still trusted.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔍</span>
+        <div class="feature-title">Smart search</div>
+        <p class="feature-desc">Search any salon and instantly see if your network has been there — before you even click.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🏙️</span>
+        <div class="feature-title">City filtering</div>
+        <p class="feature-desc">Set your home cities and filter results by location. Perfect for traveling or just moved somewhere new.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📋</span>
+        <div class="feature-title">Save for later</div>
+        <p class="feature-desc">Bookmark spots you want to try. Come back and rate them after your first visit.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔒</span>
+        <div class="feature-title">Trusted circle only</div>
+        <p class="feature-desc">Your ratings are visible to friends and mutuals only — never to strangers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-section">
+    <div class="how-inner">
+      <div class="features-label">How it works</div>
+      <h2 class="features-heading">Up and running in minutes</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Sign up</div>
+          <p class="step-desc">Create your profile with your phone number and pick your cities.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">Add friends</div>
+          <p class="step-desc">Connect with people you trust. Their recs become your discovery feed.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">Rate &amp; rank</div>
+          <p class="step-desc">Log visits with a simple 3-tier system and rank your favorites against each other.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-title">Discover</div>
+          <p class="step-desc">Browse your network's top spots, filtered by service type or city.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rating system -->
+  <section class="section">
+    <div class="features-label">The rating system</div>
+    <h2 class="features-heading">Simple categories. Smart ranking.</h2>
+    <p class="features-sub">No star inflation. No ambiguous numbers. Just three honest tiers — and within each one, your favorites are always ranked.</p>
+    <div class="tiers">
+      <div class="tier tier-keeper">
+        <span class="tier-emoji">💚</span>
+        <div class="tier-title">It's a keeper</div>
+        <div class="tier-range">Score 6.7 – 10</div>
+        <p class="tier-desc">Top tier. You'd go back and you'd tell your friends.</p>
+      </div>
+      <div class="tier tier-solid">
+        <span class="tier-emoji">✨</span>
+        <div class="tier-title">Does the job</div>
+        <div class="tier-range">Score 3.4 – 6.6</div>
+        <p class="tier-desc">Solid. Gets the job done. No major complaints.</p>
+      </div>
+      <div class="tier tier-nope">
+        <span class="tier-emoji">🙅</span>
+        <div class="tier-title">Not for me</div>
+        <div class="tier-range">Score 0 – 3.3</div>
+        <p class="tier-desc">Not your vibe. Saved someone else from a bad trip.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="quote-section">
+    <div class="quote-inner">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">You already ask your friends where they get their hair done. Keeper just makes that searchable.</p>
+      <div class="quote-attr">Built in Chicago, 2026</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Be part of the first circle</h2>
+    <p>We're inviting a small group first. Drop your number and we'll reach out when your spot is ready.</p>
+    <form class="waitlist-form" id="waitlist-form-2" onsubmit="submitWaitlist(event, '2')">
+      <input type="tel" id="phone-input-2" class="waitlist-input" placeholder="Your phone number" autocomplete="tel" required />
+      <button type="submit" class="waitlist-btn" id="waitlist-btn-2">Join waitlist</button>
+    </form>
+    <div class="waitlist-hint">No spam. Just your invite.</div>
+    <div class="waitlist-success" id="waitlist-success-2">🎉 You're on the list! We'll be in touch.</div>
+    <div class="waitlist-error" id="waitlist-error-2">Something went wrong. Please try again.</div>
+  </section>
+
+  <footer>
+    <ul class="footer-links">
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Keeper. Built with care in Chicago.</p>
+  </footer>
+
+  <script>
+    const SUPABASE_URL  = 'https://nqgkzilrzhgejvrcrtav.supabase.co'
+    const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5xZ2t6aWxyemhnZWp2cmNydGF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2OTQ0OTAsImV4cCI6MjA4OTI3MDQ5MH0.r1vMxF3nzIfleIJajOIeuGA6wNvbadWpR5juSC9SWi4'
+
+    function normalizePhone(raw) {
+      return raw.replace(/\D/g, '')
+    }
+
+    async function submitWaitlist(e, suffix = '') {
+      e.preventDefault()
+      const phone  = normalizePhone(document.getElementById(`phone-input${suffix ? '-' + suffix : ''}`).value)
+      const btn    = document.getElementById(`waitlist-btn${suffix ? '-' + suffix : ''}`)
+      const form   = document.getElementById(`waitlist-form${suffix ? '-' + suffix : ''}`)
+      const success = document.getElementById(`waitlist-success${suffix ? '-' + suffix : ''}`)
+      const error   = document.getElementById(`waitlist-error${suffix ? '-' + suffix : ''}`)
+
+      if (phone.length < 7) {
+        error.textContent = 'Please enter a valid phone number.'
+        error.style.display = 'block'
+        return
+      }
+
+      btn.disabled = true
+      btn.textContent = 'Joining…'
+      error.style.display = 'none'
+
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_KEY,
+            'Authorization': `Bearer ${SUPABASE_KEY}`,
+            'Prefer': 'return=minimal',
+          },
+          body: JSON.stringify({ phone }),
+        })
+
+        if (res.ok || res.status === 409) {
+          // 409 = duplicate (already on list) — treat as success
+          form.style.display = 'none'
+          success.style.display = 'flex'
+        } else {
+          throw new Error(`Status ${res.status}`)
+        }
+      } catch {
+        btn.disabled = false
+        btn.textContent = suffix ? 'Join waitlist' : 'Join the waitlist'
+        error.style.display = 'block'
+      }
+    }
+  </script>
+</body>
+</html>
