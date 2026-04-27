@@ -20,10 +20,10 @@
   </nav>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="join">
     <div class="hero-inner">
       <img src="favicon.svg" alt="" class="hero-logo" />
-      <div class="hero-badge">✨ Now in Friends &amp; Family Preview</div>
+      <div class="hero-badge">Now in Friends &amp; Family Preview</div>
       <h1>Beauty recs from people <span>you actually trust</span></h1>
       <p class="hero-sub">
         Keeper is the social ratings app for hair, nails, brows, facials, and more.
@@ -42,8 +42,28 @@
         <button type="submit" class="waitlist-btn" id="waitlist-btn">Join the waitlist</button>
       </form>
       <div class="waitlist-hint">No spam. We'll text you when you're in.</div>
-      <div class="waitlist-success" id="waitlist-success">🎉 You're on the list! We'll be in touch.</div>
+      <div class="waitlist-success" id="waitlist-success">You're on the list! We'll be in touch.</div>
       <div class="waitlist-error" id="waitlist-error">Something went wrong. Please try again.</div>
+    </div>
+  </section>
+
+  <!-- App Preview -->
+  <section class="app-preview">
+    <div class="app-preview-inner">
+      <div class="app-preview-copy">
+        <div class="features-label">See it in action</div>
+        <h2 class="features-heading">Your friends' picks, all in one place</h2>
+        <p class="app-preview-desc">Browse trusted ratings from people in your circle, save spots you want to try, and log your own visits — all from your phone.</p>
+        <a href="#join" class="app-cta-link">Get early access →</a>
+      </div>
+      <div class="app-preview-phones">
+        <div class="phone-mockup phone-mockup--back">
+          <img src="screenshot-detail.png" alt="Keeper place detail showing friend ratings" />
+        </div>
+        <div class="phone-mockup phone-mockup--front">
+          <img src="screenshot-feed.png" alt="Keeper friends feed showing top spots" />
+        </div>
+      </div>
     </div>
   </section>
 
@@ -55,32 +75,44 @@
 
     <div class="features-grid">
       <div class="feature-card">
-        <span class="feature-icon">💚</span>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
         <div class="feature-title">Friend ratings</div>
         <p class="feature-desc">See exactly what your friends rated, what service they got, and what they said — all in one place.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">🔗</span>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </div>
         <div class="feature-title">Network ratings</div>
         <p class="feature-desc">Tap into friends-of-friends for wider discovery. More signal, still trusted.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">🔍</span>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
         <div class="feature-title">Smart search</div>
         <p class="feature-desc">Search any salon and instantly see if your network has been there — before you even click.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">🏙️</span>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
         <div class="feature-title">City filtering</div>
         <p class="feature-desc">Set your home cities and filter results by location. Perfect for traveling or just moved somewhere new.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">📋</span>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </div>
         <div class="feature-title">Save for later</div>
         <p class="feature-desc">Bookmark spots you want to try. Come back and rate them after your first visit.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">🔒</span>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
         <div class="feature-title">Trusted circle only</div>
         <p class="feature-desc">Your ratings are visible to friends and mutuals only — never to strangers.</p>
       </div>
@@ -124,19 +156,25 @@
     <p class="features-sub">No star inflation. No ambiguous numbers. Just three honest tiers — and within each one, your favorites are always ranked.</p>
     <div class="tiers">
       <div class="tier tier-keeper">
-        <span class="tier-emoji">💚</span>
+        <span class="tier-icon tier-icon--keeper">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </span>
         <div class="tier-title">It's a keeper</div>
         <div class="tier-range">Score 6.7 – 10</div>
         <p class="tier-desc">Top tier. You'd go back and you'd tell your friends.</p>
       </div>
       <div class="tier tier-solid">
-        <span class="tier-emoji">✨</span>
+        <span class="tier-icon tier-icon--solid">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
         <div class="tier-title">Does the job</div>
         <div class="tier-range">Score 3.4 – 6.6</div>
         <p class="tier-desc">Solid. Gets the job done. No major complaints.</p>
       </div>
       <div class="tier tier-nope">
-        <span class="tier-emoji">🙅</span>
+        <span class="tier-icon tier-icon--nope">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </span>
         <div class="tier-title">Not for me</div>
         <div class="tier-range">Score 0 – 3.3</div>
         <p class="tier-desc">Not your vibe. Saved someone else from a bad trip.</p>
@@ -162,7 +200,7 @@
       <button type="submit" class="waitlist-btn" id="waitlist-btn-2">Join waitlist</button>
     </form>
     <div class="waitlist-hint">No spam. Just your invite.</div>
-    <div class="waitlist-success" id="waitlist-success-2">🎉 You're on the list! We'll be in touch.</div>
+    <div class="waitlist-success" id="waitlist-success-2">You're on the list! We'll be in touch.</div>
     <div class="waitlist-error" id="waitlist-error-2">Something went wrong. Please try again.</div>
   </section>
 

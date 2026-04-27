@@ -196,6 +196,106 @@ nav {
   display: none;
 }
 
+/* ── App Preview ── */
+.app-preview {
+  background: var(--dark);
+  padding: 80px 24px;
+  overflow: hidden;
+}
+
+.app-preview-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.app-preview-copy {
+  flex: 1;
+  min-width: 260px;
+}
+
+.app-preview-copy .features-label {
+  color: rgba(255,255,255,0.5);
+}
+
+.app-preview-copy .features-heading {
+  color: white;
+  margin-bottom: 16px;
+}
+
+.app-preview-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 400px;
+}
+
+.app-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--blue);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.12s;
+}
+
+.app-cta-link:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+}
+
+/* ── Phone Mockups ── */
+.app-preview-phones {
+  position: relative;
+  flex-shrink: 0;
+  width: 340px;
+  height: 520px;
+}
+
+.phone-mockup {
+  position: absolute;
+  width: 228px;
+  border-radius: 36px;
+  background: #111;
+  padding: 9px;
+  overflow: hidden;
+}
+
+.phone-mockup img {
+  width: 100%;
+  display: block;
+  border-radius: 28px;
+  object-fit: cover;
+  /* Placeholder gradient shown when image not yet loaded */
+  background: linear-gradient(160deg, #2a3a4a 0%, #1a2530 100%);
+  min-height: 420px;
+}
+
+.phone-mockup--back {
+  top: 48px;
+  right: 0;
+  z-index: 1;
+  transform: rotate(4deg);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  opacity: 0.8;
+}
+
+.phone-mockup--front {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transform: rotate(-3deg);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
+}
+
 /* ── Features grid ── */
 .features-label {
   font-size: 0.78rem;
@@ -235,9 +335,21 @@ nav {
 }
 
 .feature-icon {
-  font-size: 1.6rem;
-  margin-bottom: 14px;
-  display: block;
+  width: 48px;
+  height: 48px;
+  background: var(--blue-pale);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.feature-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--blue);
 }
 
 .feature-title {
@@ -304,15 +416,38 @@ nav {
 .tier-solid  { background: #FEF9D8; border-color: #f0e89a; }
 .tier-nope   { background: rgba(234,124,141,0.15); border-color: rgba(234,124,141,0.3); }
 
-.tier-emoji { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+/* Tier icons */
+.tier-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.tier-icon svg { width: 20px; height: 20px; }
+
+.tier-icon--keeper { background: rgba(30, 107, 58, 0.15); }
+.tier-icon--keeper svg { fill: #1E6B3A; }
+
+.tier-icon--solid { background: rgba(122, 101, 16, 0.15); }
+.tier-icon--solid svg { stroke: #7A6510; }
+
+.tier-icon--nope { background: rgba(154, 48, 64, 0.15); }
+.tier-icon--nope svg { stroke: #9A3040; }
+
 .tier-keeper .tier-title { color: #1E6B3A; }
 .tier-solid  .tier-title { color: #7A6510; }
 .tier-nope   .tier-title { color: #9A3040; }
 .tier-title { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+
 .tier-keeper .tier-range { color: #2E8048; }
 .tier-solid  .tier-range { color: #9A7E15; }
 .tier-nope   .tier-range { color: #B03A4E; }
 .tier-range { font-size: 0.78rem; font-weight: 600; margin-bottom: 8px; }
+
 .tier-keeper .tier-desc { color: #2a5e34; }
 .tier-solid  .tier-desc { color: #6b5810; }
 .tier-nope   .tier-desc { color: #8a2e3e; }
@@ -393,6 +528,32 @@ footer {
 .support-card-desc { font-size: 0.88rem; color: var(--dark-mid); line-height: 1.6; }
 
 /* ── Responsive ── */
+@media (max-width: 768px) {
+  .app-preview-inner {
+    flex-direction: column;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .app-preview-copy .features-label,
+  .app-preview-copy .features-heading,
+  .app-preview-desc {
+    text-align: center;
+  }
+
+  .app-preview-desc { max-width: 100%; }
+
+  .app-preview-phones {
+    width: 290px;
+    height: 450px;
+    margin: 0 auto;
+  }
+
+  .phone-mockup { width: 196px; }
+  .phone-mockup img { min-height: 360px; }
+  .phone-mockup--back { top: 40px; }
+}
+
 @media (max-width: 600px) {
   .nav-links { gap: 16px; }
   .nav-links a { font-size: 0.82rem; }
@@ -402,4 +563,12 @@ footer {
 
 @media (max-width: 400px) {
   .steps { grid-template-columns: 1fr; }
+
+  .app-preview-phones {
+    width: 240px;
+    height: 380px;
+  }
+
+  .phone-mockup { width: 164px; }
+  .phone-mockup img { min-height: 300px; }
 }
