@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary -->
+  <title>Keeper — Beauty recs from people you trust</title>
+  <meta name="description" content="See ratings from people in your circle on Keeper — the beauty and wellness rec app." />
+
+  <!-- Open Graph (drives the iMessage / Slack / Twitter link preview) -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Keeper" />
+  <meta property="og:title"       content="Check out this place on Keeper" />
+  <meta property="og:description" content="See what your friends rated — hair, nails, skin, and more." />
+  <meta property="og:image"       content="https://try-keeper.com/og-image.png" />
+  <meta property="og:url"         content="https://try-keeper.com" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Check out this place on Keeper" />
+  <meta name="twitter:description" content="See what your friends rated — hair, nails, skin, and more." />
+  <meta name="twitter:image"       content="https://try-keeper.com/og-image.png" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, 'Inter', sans-serif;
+      background: #F0F4F8;
+      color: #374957;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 32px 36px;
+      max-width: 360px;
+      width: 100%;
+      box-shadow: 0 8px 32px rgba(55,73,87,0.12);
+    }
+    .logo { width: 56px; height: 56px; margin: 0 auto 20px; display: block; }
+    h1 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
+    p  { font-size: 0.95rem; color: #6B7280; line-height: 1.6; margin-bottom: 28px; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      margin-bottom: 10px;
+      transition: opacity 0.15s;
+    }
+    .btn:active { opacity: 0.8; }
+    .btn-primary { background: #3E68DD; color: white; }
+    .btn-secondary {
+      background: #EEF2FF;
+      color: #3E68DD;
+      font-size: 0.9rem;
+    }
+    .status {
+      font-size: 0.8rem;
+      color: #9CA3AF;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="/favicon.svg" alt="Keeper" class="logo" />
+    <h1>Open in Keeper</h1>
+    <p>Someone shared a place with you on Keeper — the social beauty &amp; wellness ratings app.</p>
+    <button class="btn btn-primary" id="open-btn" onclick="tryOpenApp()">Open in Keeper</button>
+    <a class="btn btn-secondary" href="/" id="web-btn">Learn about Keeper</a>
+    <p class="status" id="status"></p>
+  </div>
+
+  <script>
+    // Extract place ID from URL path: /place/abc123
+    const parts   = window.location.pathname.replace(/\/$/, '').split('/')
+    const placeId = parts[parts.length - 1] || ''
+
+    function tryOpenApp() {
+      if (!placeId) return
+
+      const scheme  = `keeper://place/${placeId}`
+      const appStore = 'https://apps.apple.com/us/app/keeper/id6746858298'
+
+      // Attempt to open via custom URL scheme
+      window.location.href = scheme
+
+      // If we're still here after 1.5s, the app isn't installed — go to App Store
+      const timer = setTimeout(() => {
+        document.getElementById('status').textContent = "Looks like Keeper isn't installed — taking you to the App Store…"
+        setTimeout(() => { window.location.href = appStore }, 800)
+      }, 1500)
+
+      // If the page loses focus (app opened successfully), cancel the redirect
+      window.addEventListener('blur', () => clearTimeout(timer), { once: true })
+    }
+
+    // Auto-attempt on page load when a place ID is present
+    if (placeId) {
+      setTimeout(tryOpenApp, 300)
+    }
+  </script>
+</body>
+</html>

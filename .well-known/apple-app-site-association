@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["VS45VXG48Y.app.keeper.ios"],
+        "components": [
+          { "/": "/place/*", "comment": "Opens place pages in the Keeper app" }
+        ]
+      }
+    ]
+  }
+}
