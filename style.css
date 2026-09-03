@@ -527,7 +527,291 @@ footer {
 .support-card-title { font-size: 0.97rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
 .support-card-desc { font-size: 0.88rem; color: var(--dark-mid); line-height: 1.6; }
 
+/* ── Differentiators with inline UI ── */
+.diff-section {
+  padding: 80px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.diff-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.diff-item--flip {
+  direction: rtl;
+}
+
+.diff-item--flip > * {
+  direction: ltr;
+}
+
+.diff-heading {
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.diff-desc {
+  font-size: 1rem;
+  color: var(--dark-mid);
+  line-height: 1.7;
+  max-width: 380px;
+}
+
+/* ── Inline UI: friend rating card ── */
+.ui-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  max-width: 300px;
+}
+
+.ui-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ui-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.ui-avatar-sm {
+  width: 28px;
+  height: 28px;
+  font-size: 0.65rem;
+}
+
+.ui-avatar-more {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--dark-mid);
+}
+
+.ui-friend-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.ui-meta {
+  font-size: 0.75rem;
+  color: var(--dark-light);
+}
+
+.ui-salon-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+
+.ui-address {
+  font-size: 0.78rem;
+  color: var(--dark-light);
+  margin-bottom: 12px;
+}
+
+.ui-chips {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.ui-chip {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.ui-chip-keeper {
+  background: #D3E7CD;
+  color: #1E6B3A;
+}
+
+.ui-note {
+  font-size: 0.83rem;
+  color: var(--dark-mid);
+  font-style: italic;
+}
+
+/* ── Inline UI: tier stack ── */
+.ui-tier-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 320px;
+}
+
+.ui-tier-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1.5px solid transparent;
+}
+
+.ui-tier-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ui-tier-keeper { background: #D3E7CD; border-color: #b8dbb0; }
+.ui-tier-keeper .ui-tier-dot { background: #1E6B3A; }
+.ui-tier-keeper .ui-tier-label { color: #1E6B3A; }
+.ui-tier-keeper .ui-tier-score { color: #1E6B3A; }
+
+.ui-tier-solid { background: #FEF9D8; border-color: #f0e89a; }
+.ui-tier-solid .ui-tier-dot { background: #7A6510; }
+.ui-tier-solid .ui-tier-label { color: #7A6510; }
+.ui-tier-solid .ui-tier-score { color: #7A6510; }
+
+.ui-tier-nope { background: rgba(234,124,141,0.15); border-color: rgba(234,124,141,0.35); }
+.ui-tier-nope .ui-tier-dot { background: #9A3040; }
+.ui-tier-nope .ui-tier-label { color: #9A3040; }
+.ui-tier-nope .ui-tier-score { color: #9A3040; }
+
+.ui-tier-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.ui-tier-sub {
+  font-size: 0.75rem;
+  color: var(--dark-light);
+  margin-top: 2px;
+}
+
+.ui-tier-score {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-left: auto;
+}
+
+/* ── Inline UI: privacy card ── */
+.ui-card-privacy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  max-width: 240px;
+  padding: 28px 24px;
+}
+
+.ui-privacy-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--blue-pale);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+}
+
+.ui-privacy-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dark-light);
+}
+
+.ui-privacy-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.ui-privacy-sub {
+  font-size: 0.8rem;
+  color: var(--dark-mid);
+  line-height: 1.4;
+}
+
+/* ── Services pills ── */
+.services-section {
+  background: var(--bg);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.services-inner { max-width: 700px; margin: 0 auto; }
+
+.services-inner .features-heading {
+  margin-bottom: 28px;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.service-pill {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  padding: 9px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark-mid);
+}
+
 /* ── Responsive ── */
+@media (max-width: 768px) {
+  .diff-item {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .diff-item--flip {
+    direction: ltr;
+  }
+
+  .ui-card,
+  .ui-tier-stack,
+  .ui-card-privacy {
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 768px) {
   .app-preview-inner {
     flex-direction: column;
