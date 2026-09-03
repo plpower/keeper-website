@@ -785,6 +785,9 @@ footer {
 }
 
 .service-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: 50px;
@@ -792,6 +795,19 @@ footer {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--dark-mid);
+}
+
+.service-pill svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.service-pill--muted {
+  background: var(--bg);
+  color: var(--dark-light);
+  font-weight: 500;
+  font-style: italic;
+  border-style: dashed;
 }
 
 /* ── Responsive ── */
