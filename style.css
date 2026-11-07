@@ -76,14 +76,14 @@ nav {
 /* ── Hero ── */
 .hero {
   background: var(--bg);
-  padding: 100px 24px 80px;
+  padding: 80px 24px 60px;
   text-align: center;
 }
 
 .hero-inner { max-width: 680px; margin: 0 auto; }
 
 .hero-logo {
-  width: 72px;
+  width: 64px;
   height: auto;
   margin: 0 auto 20px;
   display: block;
@@ -95,19 +95,20 @@ nav {
   gap: 6px;
   background: var(--blue-pale);
   color: var(--blue);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   padding: 5px 14px;
   border-radius: 20px;
   margin-bottom: 24px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
   font-weight: 800;
   color: var(--dark);
-  line-height: 1.12;
+  line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 20px;
 }
@@ -115,11 +116,11 @@ nav {
 .hero h1 span { color: var(--blue); }
 
 .hero-sub {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--dark-mid);
-  max-width: 520px;
+  max-width: 480px;
   margin: 0 auto 40px;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 /* ── Waitlist Form ── */
@@ -196,104 +197,40 @@ nav {
   display: none;
 }
 
-/* ── App Preview ── */
-.app-preview {
-  background: var(--dark);
-  padding: 80px 24px;
-  overflow: hidden;
+/* ── Screenshots Section ── */
+.screenshots-section {
+  background: var(--bg);
+  padding: 0 24px 80px;
 }
 
-.app-preview-inner {
-  max-width: 1000px;
+.screenshots-inner {
+  max-width: 600px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  gap: 64px;
+  gap: 20px;
+  justify-content: center;
 }
 
-.app-preview-copy {
+.screenshot-phone {
   flex: 1;
-  min-width: 260px;
-}
-
-.app-preview-copy .features-label {
-  color: rgba(255,255,255,0.5);
-}
-
-.app-preview-copy .features-heading {
-  color: white;
-  margin-bottom: 16px;
-}
-
-.app-preview-desc {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.7;
-  margin-bottom: 32px;
-  max-width: 400px;
-}
-
-.app-cta-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--blue);
-  color: white;
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 13px 26px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: background 0.15s, transform 0.12s;
-}
-
-.app-cta-link:hover {
-  background: var(--blue-dark);
-  transform: translateY(-2px);
-}
-
-/* ── Phone Mockups ── */
-.app-preview-phones {
-  position: relative;
-  flex-shrink: 0;
-  width: 340px;
-  height: 520px;
-}
-
-.phone-mockup {
-  position: absolute;
-  width: 228px;
-  border-radius: 36px;
-  background: #111;
-  padding: 9px;
+  max-width: 240px;
+  border-radius: 32px;
   overflow: hidden;
+  box-shadow: 0 16px 48px rgba(55,73,87,0.18);
+  border: 1px solid rgba(0,0,0,0.06);
+  background: #fff;
 }
 
-.phone-mockup img {
+.screenshot-phone img {
   width: 100%;
   display: block;
-  border-radius: 28px;
-  object-fit: cover;
-  /* Placeholder gradient shown when image not yet loaded */
-  background: linear-gradient(160deg, #2a3a4a 0%, #1a2530 100%);
-  min-height: 420px;
+  border-radius: 32px;
 }
 
-.phone-mockup--back {
-  top: 48px;
-  right: 0;
-  z-index: 1;
-  transform: rotate(4deg);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-  opacity: 0.8;
-}
-
-.phone-mockup--front {
-  top: 0;
-  left: 0;
-  z-index: 2;
-  transform: rotate(-3deg);
-  box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
+@media (max-width: 500px) {
+  .screenshots-inner { gap: 12px; }
+  .screenshot-phone { border-radius: 24px; }
+  .screenshot-phone img { border-radius: 24px; }
 }
 
 /* ── Features grid ── */
@@ -454,11 +391,11 @@ nav {
 .tier-desc { font-size: 0.88rem; line-height: 1.55; }
 
 /* ── Quote ── */
-.quote-section { text-align: center; padding: 80px 24px; background: var(--bg); }
+.quote-section { text-align: center; padding: 80px 24px; background: #D3E7CD; }
 .quote-inner { max-width: 680px; margin: 0 auto; }
-.quote-mark { font-size: 4rem; line-height: 1; color: var(--blue); opacity: 0.3; font-family: Georgia, serif; }
-.quote-text { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 600; color: var(--dark); line-height: 1.55; margin: -8px 0 20px; }
-.quote-attr { font-size: 0.85rem; color: var(--dark-light); }
+.quote-mark { font-size: 4rem; line-height: 1; color: #1E6B3A; opacity: 0.35; font-family: Georgia, serif; }
+.quote-text { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 600; color: #1a3d27; line-height: 1.55; margin: -8px 0 20px; }
+.quote-attr { font-size: 0.85rem; color: #2E8048; font-weight: 500; }
 
 /* ── CTA band ── */
 .cta-section { text-align: center; padding: 80px 24px; }
@@ -791,15 +728,22 @@ footer {
   background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: 50px;
-  padding: 9px 20px;
-  font-size: 0.95rem;
+  padding: 10px 22px;
+  font-size: 0.92rem;
   font-weight: 600;
-  color: var(--dark-mid);
+  color: var(--dark);
+  transition: transform 0.12s, box-shadow 0.12s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.service-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .service-pill svg {
   flex-shrink: 0;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 .service-pill--muted {
@@ -828,32 +772,6 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
-  .app-preview-inner {
-    flex-direction: column;
-    gap: 48px;
-    text-align: center;
-  }
-
-  .app-preview-copy .features-label,
-  .app-preview-copy .features-heading,
-  .app-preview-desc {
-    text-align: center;
-  }
-
-  .app-preview-desc { max-width: 100%; }
-
-  .app-preview-phones {
-    width: 290px;
-    height: 450px;
-    margin: 0 auto;
-  }
-
-  .phone-mockup { width: 196px; }
-  .phone-mockup img { min-height: 360px; }
-  .phone-mockup--back { top: 40px; }
-}
-
 @media (max-width: 600px) {
   .nav-links { gap: 16px; }
   .nav-links a { font-size: 0.82rem; }
@@ -863,12 +781,4 @@ footer {
 
 @media (max-width: 400px) {
   .steps { grid-template-columns: 1fr; }
-
-  .app-preview-phones {
-    width: 240px;
-    height: 380px;
-  }
-
-  .phone-mockup { width: 164px; }
-  .phone-mockup img { min-height: 300px; }
 }
